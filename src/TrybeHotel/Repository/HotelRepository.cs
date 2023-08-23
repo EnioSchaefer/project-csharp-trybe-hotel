@@ -37,7 +37,7 @@ namespace TrybeHotel.Repository
             EntityEntry<Hotel> createdHotel = _context.Hotels.Add(hotel);
             _context.SaveChanges();
 
-            string cityName = _context.Cities.Find(createdHotel.Entity.CityId).Name;
+            City cityData = _context.Cities.Find(createdHotel.Entity.CityId);
 
             return new HotelDto
             {
@@ -45,7 +45,8 @@ namespace TrybeHotel.Repository
                 Name = createdHotel.Entity.Name,
                 Address = createdHotel.Entity.Address,
                 CityId = createdHotel.Entity.CityId,
-                CityName = cityName,
+                CityName = cityData.Name,
+                State = cityData.State
             };
         }
     }
