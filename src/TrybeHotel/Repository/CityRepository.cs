@@ -34,7 +34,8 @@ namespace TrybeHotel.Repository
             return new CityDto
             {
                 CityId = createdCity.Entity.CityId,
-                Name = createdCity.Entity.Name
+                Name = createdCity.Entity.Name,
+                State = createdCity.Entity.State
             };
         }
 
