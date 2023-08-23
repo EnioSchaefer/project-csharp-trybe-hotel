@@ -24,7 +24,8 @@ namespace TrybeHotel.Repository
                 Name = hotel.Name,
                 Address = hotel.Address,
                 CityId = hotel.CityId,
-                CityName = hotel.City.Name
+                CityName = hotel.City.Name,
+                State = hotel.City.State
             }).ToList();
 
             return hotels;
