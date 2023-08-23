@@ -3,6 +3,7 @@ using TrybeHotel.Models;
 using TrybeHotel.Repository;
 using TrybeHotel.Dto;
 using TrybeHotel.Services;
+using Microsoft.IdentityModel.Tokens;
 
 namespace TrybeHotel.Controllers
 {
@@ -19,8 +20,28 @@ namespace TrybeHotel.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] LoginDto login){
-           throw new NotImplementedException();
+        public IActionResult Login([FromBody] LoginDto login)
+        {
+            try
+            {
+                UserDto? userData = _repository.Login(login);
+
+                if (userData != null)
+                {
+                    string token = new TokenGenerator().Generate(userData);
+
+                    return Ok(new { token });
+                }
+                else
+                {
+                    return Unauthorized(new { message = "Incorrect e-mail or password" });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return BadRequest(e.Message);
+            }
         }
     }
 }
