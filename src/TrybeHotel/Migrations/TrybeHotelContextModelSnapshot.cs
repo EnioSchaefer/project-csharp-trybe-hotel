@@ -66,6 +66,10 @@ namespace TrybeHotel.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("CityId");
 
                     b.ToTable("Cities");
