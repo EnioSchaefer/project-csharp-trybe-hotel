@@ -13,12 +13,13 @@ public class TestReq11 : IClassFixture<WebApplicationFactory<Program>>
 {
     public HttpClient _clientGeoStatus;
 
-    public class GeoStatusResponse {
+    public class GeoStatusResponse
+    {
         public string? message { get; set; }
     }
     public TestReq11(WebApplicationFactory<Program> factory)
     {
-         _clientGeoStatus = factory.CreateClient();
+        _clientGeoStatus = factory.CreateClient();
     }
 
     [Trait("Category", "11. Desenvolva o endpoint GET /geo/status")]
@@ -28,7 +29,7 @@ public class TestReq11 : IClassFixture<WebApplicationFactory<Program>>
     {
         var json = "{\"status\" : \"0\", \"message\":\"OK\"}";
         var mockClient = new MockHttpMessageHandler();
-        mockClient.When($"https://nominatim.openstreetmap.org/*").Respond("application/json",json );
+        mockClient.When($"https://nominatim.openstreetmap.org/*").Respond("application/json", json);
 
         var client = new HttpClient(mockClient);
         var geoService = new GeoService(client);
