@@ -2,6 +2,7 @@ namespace TrybeHotel.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using TrybeHotel.Dto;
 
 // 1. Implemente as models da aplicação
 public class Room

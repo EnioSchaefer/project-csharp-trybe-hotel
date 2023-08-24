@@ -36,9 +36,9 @@
               "resultFile": {
                 "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
                 "region": {
-                  "startLine": 48,
+                  "startLine": 64,
                   "startColumn": 33,
-                  "endLine": 48,
+                  "endLine": 64,
                   "endColumn": 43
                 }
               }
@@ -133,6 +133,27 @@
           }
         },
         {
+          "ruleId": "CS8604",
+          "level": "warning",
+          "message": "Possible null reference argument for parameter 'email' in 'BookingResponse IBookingRepository.Add(BookingDtoInsert booking, string email)'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Controllers/BookingController.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 74,
+                  "endLine": 33,
+                  "endColumn": 83
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "CS1998",
           "level": "warning",
           "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
@@ -187,27 +208,6 @@
                   "startColumn": 54,
                   "endLine": 28,
                   "endColumn": 68
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8604",
-          "level": "warning",
-          "message": "Possible null reference argument for parameter 'email' in 'BookingResponse IBookingRepository.Add(BookingDtoInsert booking, string email)'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Controllers/BookingController.cs",
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 74,
-                  "endLine": 33,
-                  "endColumn": 83
                 }
               }
             }
@@ -534,27 +534,6 @@
         {
           "ruleId": "CS8618",
           "level": "warning",
-          "message": "Non-nullable property 'State' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Dto/HotelDto.cs",
-                "region": {
-                  "startLine": 10,
-                  "startColumn": 23,
-                  "endLine": 10,
-                  "endColumn": 28
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
           "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
           "locations": [
             {
@@ -687,9 +666,9 @@
               "resultFile": {
                 "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Models/Room.cs",
                 "region": {
-                  "startLine": 11,
+                  "startLine": 12,
                   "startColumn": 17,
-                  "endLine": 11,
+                  "endLine": 12,
                   "endColumn": 21
                 }
               }
@@ -708,9 +687,9 @@
               "resultFile": {
                 "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Models/Room.cs",
                 "region": {
-                  "startLine": 13,
+                  "startLine": 14,
                   "startColumn": 17,
-                  "endLine": 13,
+                  "endLine": 14,
                   "endColumn": 22
                 }
               }
@@ -796,6 +775,174 @@
                   "startColumn": 23,
                   "endLine": 12,
                   "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/HotelRepository.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 28,
+                  "endLine": 27,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/HotelRepository.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 29,
+                  "endLine": 40,
+                  "endColumn": 77
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/HotelRepository.cs",
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 28,
+                  "endLine": 48,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 34,
+                  "endLine": 35,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 35,
+                  "endLine": 36,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 30,
+                  "endLine": 47,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 35,
+                  "endLine": 53,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 36,
+                  "endLine": 57,
+                  "endColumn": 67
                 }
               }
             }
@@ -937,74 +1084,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/HotelRepository.cs",
-                "region": {
-                  "startLine": 27,
-                  "startColumn": 28,
-                  "endLine": 27,
-                  "endColumn": 38
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8600",
-          "level": "warning",
-          "message": "Converting null literal or possible null value to non-nullable type.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/HotelRepository.cs",
-                "region": {
-                  "startLine": 40,
-                  "startColumn": 29,
-                  "endLine": 40,
-                  "endColumn": 77
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8602",
-          "level": "warning",
-          "message": "Dereference of a possibly null reference.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/HotelRepository.cs",
-                "region": {
-                  "startLine": 48,
-                  "startColumn": 28,
-                  "endLine": 48,
-                  "endColumn": 36
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8602",
-          "level": "warning",
-          "message": "Dereference of a possibly null reference.",
-          "locations": [
-            {
-              "resultFile": {
                 "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
                 "region": {
-                  "startLine": 35,
+                  "startLine": 70,
                   "startColumn": 34,
-                  "endLine": 35,
+                  "endLine": 70,
                   "endColumn": 38
                 }
               }
@@ -1023,10 +1107,10 @@
               "resultFile": {
                 "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
                 "region": {
-                  "startLine": 54,
-                  "startColumn": 34,
-                  "endLine": 54,
-                  "endColumn": 38
+                  "startLine": 71,
+                  "startColumn": 35,
+                  "endLine": 71,
+                  "endColumn": 40
                 }
               }
             }
@@ -1044,10 +1128,73 @@
               "resultFile": {
                 "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
                 "region": {
-                  "startLine": 57,
+                  "startLine": 74,
                   "startColumn": 17,
-                  "endLine": 57,
+                  "endLine": 74,
                   "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 30,
+                  "endLine": 87,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 35,
+                  "endLine": 93,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/enioschaefer/projetos/csharp/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 36,
+                  "endLine": 97,
+                  "endColumn": 59
                 }
               }
             }

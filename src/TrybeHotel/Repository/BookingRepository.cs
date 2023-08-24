@@ -33,6 +33,7 @@ namespace TrybeHotel.Repository
             .Where(booking => booking.BookingId == createdBooking.BookingId)
             .Include(booking => booking.Room)
             .ThenInclude(room => room.Hotel)
+            .ThenInclude(hotel => hotel.City)
             .First();
 
             return new BookingResponse
@@ -41,7 +42,22 @@ namespace TrybeHotel.Repository
                 CheckIn = bookingResponse.CheckIn,
                 CheckOut = bookingResponse.CheckOut,
                 GuestQuant = bookingResponse.GuestQuant,
-                Room = bookingResponse.Room
+                Room = new RoomDto
+                {
+                    RoomId = bookingResponse.Room.RoomId,
+                    Name = bookingResponse.Room.Name,
+                    Capacity = bookingResponse.Room.Capacity,
+                    Image = bookingResponse.Room.Image,
+                    Hotel = new HotelDto
+                    {
+                        HotelId = bookingResponse.Room.Hotel.HotelId,
+                        Name = bookingResponse.Room.Hotel.Name,
+                        Address = bookingResponse.Room.Hotel.Address,
+                        CityId = bookingResponse.Room.Hotel.CityId,
+                        CityName = bookingResponse.Room.Hotel.City.Name,
+                        State = bookingResponse.Room.Hotel.City.State,
+                    }
+                }
             };
         }
 
@@ -52,6 +68,7 @@ namespace TrybeHotel.Repository
             .Include(booking => booking.User)
             .Include(booking => booking.Room)
             .ThenInclude(room => room.Hotel)
+            .ThenInclude(hotel => hotel.City)
             .First();
 
             if (booking.User.Email != email)
@@ -65,7 +82,22 @@ namespace TrybeHotel.Repository
                 CheckIn = booking.CheckIn,
                 CheckOut = booking.CheckOut,
                 GuestQuant = booking.GuestQuant,
-                Room = booking.Room
+                Room = new RoomDto
+                {
+                    RoomId = booking.Room.RoomId,
+                    Name = booking.Room.Name,
+                    Capacity = booking.Room.Capacity,
+                    Image = booking.Room.Image,
+                    Hotel = new HotelDto
+                    {
+                        HotelId = booking.Room.Hotel.HotelId,
+                        Name = booking.Room.Hotel.Name,
+                        Address = booking.Room.Hotel.Address,
+                        CityId = booking.Room.Hotel.CityId,
+                        CityName = booking.Room.Hotel.City.Name,
+                        State = booking.Room.Hotel.City.State,
+                    }
+                }
             };
         }
 
