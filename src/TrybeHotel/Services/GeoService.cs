@@ -1,5 +1,6 @@
 using System.Net.Http;
 using TrybeHotel.Dto;
+using TrybeHotel.Models;
 using TrybeHotel.Repository;
 
 namespace TrybeHotel.Services
@@ -10,19 +11,19 @@ namespace TrybeHotel.Services
         public GeoService(HttpClient client)
         {
             _client = client;
-            _client.DefaultRequestHeaders.Add("Accept", "application/json");
         }
 
         // 11. Desenvolva o endpoint GET /geo/status
         public async Task<object> GetGeoStatus()
         {
-            using (HttpResponseMessage response = await _client.GetAsync("https://nominatim.openstreetmap.org/status.php?format=json"))
+            using (HttpResponseMessage Response = await _client.GetAsync("https://nominatim.openstreetmap.org/status.php?format=json"))
             {
-                if (response.IsSuccessStatusCode)
+                Response.Headers.Add("Accept", "application/json");
+                if (Response.IsSuccessStatusCode)
                 {
-                    object json = await response.Content.ReadAsStringAsync();
+                    object Json = await Response.Content.ReadAsStringAsync();
 
-                    return json;
+                    return Json;
                 }
                 else
                 {
@@ -34,13 +35,51 @@ namespace TrybeHotel.Services
         // 12. Desenvolva o endpoint GET /geo/address
         public async Task<GeoDtoResponse> GetGeoLocation(GeoDto geoDto)
         {
-            throw new NotImplementedException();
+            string Url = $"https://nominatim.openstreetmap.org/search?street={geoDto.Address}&city={geoDto.City}&country=Brazil&state={geoDto.State}&format=json&limit=1";
+            using (HttpResponseMessage Response = await _client.GetAsync(Url))
+            {
+                Response.Headers.Add("Accept", "application/json");
+                Response.Headers.Add("User-Agent", "aspnet-user-agent");
+                if (Response.IsSuccessStatusCode)
+                {
+                    GeoDtoResponse Json = await Response.Content.ReadFromJsonAsync<GeoDtoResponse>();
+
+                    return Json;
+                }
+                else
+                {
+                    return default(GeoDtoResponse);
+                }
+            }
         }
 
         // 12. Desenvolva o endpoint GET /geo/address
         public async Task<List<GeoDtoHotelResponse>> GetHotelsByGeo(GeoDto geoDto, IHotelRepository repository)
         {
-            throw new NotImplementedException();
+            GeoDtoResponse BaseGeoLocation = await GetGeoLocation(geoDto);
+            IEnumerable<HotelDto> Hotels = repository.GetHotels();
+            List<GeoDtoHotelResponse> HotelsDistanceList = new();
+
+            foreach (HotelDto hotel in Hotels)
+            {
+                GeoDto HotelGeoDto = new GeoDto { Address = hotel.Address, City = hotel.CityName, State = hotel.State };
+                GeoDtoResponse HotelGeoLocation = await GetGeoLocation(HotelGeoDto);
+
+                int Distance = CalculateDistance(BaseGeoLocation.lat, BaseGeoLocation.lon, HotelGeoLocation.lat, HotelGeoLocation.lon);
+
+                HotelsDistanceList.Add(new GeoDtoHotelResponse
+                {
+                    HotelId = hotel.HotelId,
+                    Name = hotel.Name,
+                    Address = hotel.Address,
+                    CityName = hotel.CityName,
+                    State = hotel.State,
+                    Distance = Distance
+                });
+            }
+
+            List<GeoDtoHotelResponse> OrderedHotelsDistanceList = HotelsDistanceList.OrderBy(hotel => hotel.Distance).ToList();
+            return OrderedHotelsDistanceList;
         }
 
 
