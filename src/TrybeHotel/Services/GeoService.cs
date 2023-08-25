@@ -1,4 +1,6 @@
 using System.Net.Http;
+using System.Text.Json;
+using FluentAssertions.Types;
 using TrybeHotel.Dto;
 using TrybeHotel.Models;
 using TrybeHotel.Repository;
@@ -11,6 +13,7 @@ namespace TrybeHotel.Services
         public GeoService(HttpClient client)
         {
             _client = client;
+            _client.DefaultRequestHeaders.Add("Accept", "application/json");
         }
 
         // 11. Desenvolva o endpoint GET /geo/status
@@ -18,7 +21,6 @@ namespace TrybeHotel.Services
         {
             using (HttpResponseMessage Response = await _client.GetAsync("https://nominatim.openstreetmap.org/status.php?format=json"))
             {
-                Response.Headers.Add("Accept", "application/json");
                 if (Response.IsSuccessStatusCode)
                 {
                     object Json = await Response.Content.ReadAsStringAsync();
@@ -38,17 +40,17 @@ namespace TrybeHotel.Services
             string Url = $"https://nominatim.openstreetmap.org/search?street={geoDto.Address}&city={geoDto.City}&country=Brazil&state={geoDto.State}&format=json&limit=1";
             using (HttpResponseMessage Response = await _client.GetAsync(Url))
             {
-                Response.Headers.Add("Accept", "application/json");
                 Response.Headers.Add("User-Agent", "aspnet-user-agent");
                 if (Response.IsSuccessStatusCode)
                 {
-                    GeoDtoResponse Json = await Response.Content.ReadFromJsonAsync<GeoDtoResponse>();
+                    Console.WriteLine(Response.Content.ReadAsStringAsync());
+                    var Json = await Response.Content.ReadFromJsonAsync<GeoDtoResponse[]>();
 
-                    return Json;
+                    return Json.FirstOrDefault();
                 }
                 else
                 {
-                    return default(GeoDtoResponse);
+                    return null;
                 }
             }
         }
