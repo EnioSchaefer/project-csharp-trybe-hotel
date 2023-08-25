@@ -13,7 +13,6 @@ namespace TrybeHotel.Repository
             _context = context;
         }
 
-        // 4. Desenvolva o endpoint GET /hotel
         public IEnumerable<HotelDto> GetHotels()
         {
             List<HotelDto> hotels = _context.Hotels
@@ -31,7 +30,6 @@ namespace TrybeHotel.Repository
             return hotels;
         }
 
-        // 5. Desenvolva o endpoint POST /hotel
         public HotelDto AddHotel(Hotel hotel)
         {
             EntityEntry<Hotel> createdHotel = _context.Hotels.Add(hotel);

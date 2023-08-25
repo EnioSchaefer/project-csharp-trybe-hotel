@@ -92,7 +92,7 @@ namespace TrybeHotel.Repository
                 Name = user.Name,
                 Email = user.Email,
                 UserType = user.UserType
-            });
+            }).ToList();
 
             return users;
         }

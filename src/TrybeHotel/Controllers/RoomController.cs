@@ -17,7 +17,6 @@ namespace TrybeHotel.Controllers
             _repository = repository;
         }
 
-        // 6. Desenvolva o endpoint GET /room/:hotelId
         [HttpGet("{HotelId}")]
         public IActionResult GetRoom(int HotelId)
         {
@@ -34,7 +33,6 @@ namespace TrybeHotel.Controllers
             }
         }
 
-        // 7. Desenvolva o endpoint POST /room
         [HttpPost]
         [Authorize(Policy = "Admin")]
         public IActionResult PostRoom([FromBody] Room room)
@@ -52,7 +50,6 @@ namespace TrybeHotel.Controllers
             }
         }
 
-        // 8. Desenvolva o endpoint DELETE /room/:roomId
         [HttpDelete("{RoomId}")]
         [Authorize(Policy = "Admin")]
         public IActionResult Delete(int RoomId)

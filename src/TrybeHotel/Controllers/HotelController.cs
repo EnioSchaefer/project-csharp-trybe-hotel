@@ -17,7 +17,6 @@ namespace TrybeHotel.Controllers
             _repository = repository;
         }
 
-        // 4. Desenvolva o endpoint GET /hotel
         [HttpGet]
         public IActionResult GetHotels()
         {
@@ -34,7 +33,6 @@ namespace TrybeHotel.Controllers
             }
         }
 
-        // 5. Desenvolva o endpoint POST /hotel
         [HttpPost]
         [Authorize(Policy = "Admin")]
         public IActionResult PostHotel([FromBody] Hotel hotel)

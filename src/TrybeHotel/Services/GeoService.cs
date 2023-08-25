@@ -16,7 +16,6 @@ namespace TrybeHotel.Services
             _client.DefaultRequestHeaders.Add("Accept", "application/json");
         }
 
-        // 11. Desenvolva o endpoint GET /geo/status
         public async Task<object> GetGeoStatus()
         {
             using (HttpResponseMessage Response = await _client.GetAsync("https://nominatim.openstreetmap.org/status.php?format=json"))
@@ -34,7 +33,6 @@ namespace TrybeHotel.Services
             }
         }
 
-        // 12. Desenvolva o endpoint GET /geo/address
         public async Task<GeoDtoResponse> GetGeoLocation(GeoDto geoDto)
         {
             string Url = $"https://nominatim.openstreetmap.org/search?street={geoDto.Address}&city={geoDto.City}&country=Brazil&state={geoDto.State}&format=json&limit=1";
@@ -55,7 +53,6 @@ namespace TrybeHotel.Services
             }
         }
 
-        // 12. Desenvolva o endpoint GET /geo/address
         public async Task<List<GeoDtoHotelResponse>> GetHotelsByGeo(GeoDto geoDto, IHotelRepository repository)
         {
             GeoDtoResponse BaseGeoLocation = await GetGeoLocation(geoDto);
