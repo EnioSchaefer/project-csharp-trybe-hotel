@@ -211,8 +211,10 @@ A resposta segue o formato abaixo com status ` 200 `:
 O corpo da requisição deve seguir o formato abaixo:
 
     {
-    	"Name": "Blumenau",
-    	"State": "SC"
+	"Name":"Trybe Hotel BNU 1",
+	"Address":"Rua XV de Novembro",
+	"CityId": 1
+ 	"State": "SC"
     }
 
 <h4>Resposta da API</h4>
