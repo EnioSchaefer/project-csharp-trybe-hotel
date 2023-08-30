@@ -189,7 +189,7 @@ A resposta segue o formato abaixo com status ` 200 `:
     [
       {
     	"hotelId": 1,
-    	name": "Trybe Hotel BNU 1",
+    	"name": "Trybe Hotel BNU 1",
     	"address": "Rua XV de Novembro",
     	"cityId": 1,
     	"cityName": "Blumenau",
@@ -214,7 +214,6 @@ O corpo da requisição deve seguir o formato abaixo:
 	"Name":"Trybe Hotel BNU 1",
 	"Address":"Rua XV de Novembro",
 	"CityId": 1
- 	"State": "SC"
     }
 
 <h4>Resposta da API</h4>
@@ -463,7 +462,7 @@ Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato 
 
       [
           {
-    		 "hotelId": 2,
+    		"hotelId": 2,
     		"name": "Trybe Hotel BQ 2",
     		"address": "Rodovia Atonio Heil 2",
     		"cityName": "Brusque",
