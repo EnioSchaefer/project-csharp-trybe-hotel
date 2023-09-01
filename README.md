@@ -11,8 +11,9 @@
 
 <br>
 <p>1. O projeto faz uso da arquitetura MSC(Model, Service, Controller) para mais fácil manutenção e escalabilidade de código.</p>
-<p>2. O projeto faz uso de Entity Framework para facilitar, agilizar e simplificar o processo de requisição junto ao banco de dados.</p>
-<p>3. O projeto faz uso de um sistema de autenticação e autorização utilizando JWT(Json Web Token), possuindo permissões de <strong>Cliente</strong> ou <strong>Administrador</strong>.</p>
+<p>2. O projeto faz uso de Docker, possuindo um arquivo docker-compose que cria e inicia um container com o banco de dados.</p>
+<p>3. O projeto faz uso de Entity Framework para facilitar, agilizar e simplificar o processo de requisição junto ao banco de dados.</p>
+<p>4. O projeto faz uso de um sistema de autenticação e autorização utilizando JWT(Json Web Token), possuindo permissões de <strong>Cliente</strong> ou <strong>Administrador</strong>.</p>
 <br>
 
 </details>
