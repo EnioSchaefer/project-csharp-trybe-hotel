@@ -1,12 +1,23 @@
 <h1 align="center"> 🏨 Projeto TrybeHotel 🏨 </h1>
 
-<h3 align="center">-- Projeto de Back-End em C# --</h3>
+<h2 align="center">Projeto de Back-End em C#</h2>
 
-<h5 align="center">O Projeto TrybeHotel é uma API de back-end desenvolvida em C# para gerenciamento hoteleiro. Ela oferece funcionalidades para autenticação de usuários, gerenciamento de cidades, hotéis, quartos, reservas e geolocalização. A API permite que os usuários obtenham informações detalhadas sobre hotéis, realizem reservas, encontrem hotéis próximos com base em endereços e muito mais.</h5>
+<h4 align="center">Qual o objetivo deste projeto?</h4>
+
+<p>O projeto TrybeHotel é uma API de back-end desenvolvida em C# para gerenciamento hoteleiro. Ela oferece funcionalidades para autenticação de usuários, gerenciamento de cidades, hotéis, quartos, reservas e geolocalização. A API permite que os usuários obtenham informações detalhadas sobre hotéis, realizem reservas, encontrem hotéis próximos com base em endereços e muito mais.</p>
+
+<details>
+<summary>Observações de desenvolvedor:</summary>
+
+<br>
+<p>1. O projeto faz uso da arquitetura MSC(Model, Service, Controller) para mais fácil manutenção e escalabilidade de código.</p>
+<p>2. O projeto faz uso de Entity Framework para facilitar, agilizar e simplificar o processo de requisição junto ao banco de dados.</p>
+<p>3. O projeto faz uso de um sistema de autenticação e autorização utilizando JWT(Json Web Token), possuindo permissões de <strong>Cliente</strong> ou <strong>Administrador</strong>.</p>
+<br>
+
+</details>
 
 ------------
-
-<p>Obs.: Algumas rotas possuem sistema de autenticação que utilizam JWT(Json Web Token), com permissões de <strong>Cliente</strong> ou <strong>Administrador</strong>.</p>
 
 <h2>Tabela de Conteúdo</h2>
 
