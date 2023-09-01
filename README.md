@@ -68,6 +68,8 @@ Não requer informação no corpo da requisição.
 
 <h3>Respostas da API:</h3>
 
+A resposta segue o formato abaixo com status <code>200</code>:
+
     { "message": "online" }
 
 </details>
