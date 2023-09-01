@@ -42,6 +42,8 @@
 
 <strong> A funcionalidade de Status retorna uma mensagem informando o status da API. Possui a requisição: GET.</strong>
 
+<details>
+<summary>GET /</summary>
 <h3>GET /</h3>
 
 <strong>Retorna um objeto com a "message" informando o status da API.</strong>
@@ -56,10 +58,13 @@ Não requer informação no corpo da requisição.
 
     { "message": "online" }
 
+</details>
 <h1>Login</h1>
 
 <strong>A funcionalidade de login é responsável por autenticar os usuários. Os usuários podem enviar suas credenciais (email e senha) para a API, que verifica essas informações no banco de dados. Se as credenciais estiverem corretas, a API retorna um token de autenticação que será usado para autorizar solicitações subsequentes. Possui a requisição: POST.</strong>
 
+<details>
+<summary>POST /login</summary>
 <h3>POST /login</h3>
 
 <strong>Endereço de requisição - [ POST `/login` ]</strong>
@@ -92,10 +97,13 @@ O corpo da requisição deve seguir o formato abaixo:
     }
 
 </details>
+</details>
 <h1>City</h1>
 
 <strong>A funcionalidade relacionada a cidades permite que os usuários obtenham informações sobre cidades presentes no banco de dados. Além disso, é possível adicionar novas cidades ao banco de dados ou atualizar informações de cidades existentes.. Possui as seguintes requisições: GET, POST e PUT.</strong>
 
+<details>
+<summary>GET /city</summary>
 <h2>GET /city</h2>
 
 <strong>Endereço de requisição - [ GET `/city` ]</strong>
@@ -108,7 +116,7 @@ Não requer informação no corpo da requisição.
 
 <h4>Resposta da API:</h4>
 
-A resposta segue o formato abaixo com status ` 200 `:
+A resposta segue o formato abaixo com status <code>200</code>:
 
     [
       {
@@ -119,6 +127,10 @@ A resposta segue o formato abaixo com status ` 200 `:
       /* ... */
     ]
 
+</details>
+
+<details>
+<summary>POST /city</summary>
 <h2>POST /city</h2>
 
 <strong>Endereço de requisição - [ POST `/city` ]</strong>
@@ -135,7 +147,7 @@ O corpo da requisição deve seguir o formato abaixo:
     }
 
 <h4>Resposta da API:</h4>
-A resposta segue o formato abaixo com status ` 201 `:
+A resposta segue o formato abaixo com status <code>201</code>:
 
     {
     	"cityId": 1,
@@ -143,6 +155,10 @@ A resposta segue o formato abaixo com status ` 201 `:
     	"state": "SC"
     }
 
+</details>
+
+<details>
+<summary>PUT /city</summary>
 <h2>PUT /city</h2>
 
 <strong>Endereço de requisição - [ PUT `/city` ]</strong>
@@ -161,7 +177,7 @@ O corpo da requisição deve seguir o formato abaixo:
 <h4>
  Resposta da API:
 </h4>
-A resposta segue o formato abaixo com status ` 200 `:
+A resposta segue o formato abaixo com status <code>200</code>:
 
     {
     	"cityId": 1,
@@ -169,10 +185,14 @@ A resposta segue o formato abaixo com status ` 200 `:
     	"state": "SC"
     }
 
+</details>
+
 <h1>Hotel</h1>
 
 <strong>A funcionalidade de hotel permite que os usuários obtenham informações sobre hotéis presentes no banco de dados. Os usuários também podem adicionar novos hotéis, fornecendo detalhes como nome, endereço e cidade. Possui as seguintes requisições: GET, POST.</strong>
 
+<details>
+<summary>GET /hotel</summary>
 <h2>GET /hotel</h2>
 
 <strong>Endereço de requisição - [ GET `/hotel` ]</strong>
@@ -184,7 +204,7 @@ A resposta segue o formato abaixo com status ` 200 `:
 Não requer informação no corpo da requisição.
 
 <h4>Resposta da API:</h4>
-A resposta segue o formato abaixo com status ` 200 `:
+A resposta segue o formato abaixo com status <code>200</code>:
 
     [
       {
@@ -198,6 +218,10 @@ A resposta segue o formato abaixo com status ` 200 `:
       /* ... */
     ]
 
+</details>
+
+<details>
+<summary>POST /hotel</summary>
 <h2>POST /hotel</h2>
 
 <strong>Endereço de requisição - [ POST `/hotel` ]</strong>
@@ -217,7 +241,7 @@ O corpo da requisição deve seguir o formato abaixo:
     }
 
 <h4>Resposta da API</h4>
-A resposta segue o formato abaixo com status ` 201 `:
+A resposta segue o formato abaixo com status <code>201</code>:
 
     {
     	"hotelId": 1,
@@ -228,22 +252,26 @@ A resposta segue o formato abaixo com status ` 201 `:
     	"state": "SC"
     }
 
+</details>
+
  <h1>Room</h1>
 
 <strong>A funcionalidade de quarto envolve operações relacionadas a quartos de hotel. Os usuários podem obter informações detalhadas sobre um quarto específico, adicionar novos quartos ao banco de dados ou remover quartos existentes. Cada quarto está associado a um hotel específico. Possui as seguintes requisições: GET, POST e DELETE.</strong>
 
-<h2>GET /room/:roomId</h2>
+<details>
+<summary>GET /room/:hotelId</summary>
+<h2>GET /room/:hotelId</h2>
 
-<strong>Endereço de requisição - [ GET `/room/:roomId` ]</strong>
+<strong>Endereço de requisição - [ GET `/room/:hotelId` ]</strong>
 
-<strong>Retorna informações sobre um quarto específico.</strong>
+<strong>Retorna todos os quartos de um determinado hotel a partir de um ID</strong>
 
 <h4>Corpo da Requisição:</h4>
 
-O corpo da requisição é vazio, com o ID do quarto vindo do próprio endereço de requisição { `/:roomId` }
+O corpo da requisição é vazio, com o ID do quarto vindo do próprio endereço de requisição { `/:hotelId` }
 
 <h3>Resposta da API:</h3>
-A resposta segue o formato abaixo com status ` 200 `
+A resposta segue o formato abaixo com status <code>200</code>
 
     [
       {
@@ -262,6 +290,10 @@ A resposta segue o formato abaixo com status ` 200 `
       }
     ]
 
+</details>
+
+<details>
+<summary>POST /room</summary>
 <h2>POST /room</h2>
 
 <strong>Endereço de requisição - [ POST `/room` ]</strong>
@@ -282,7 +314,7 @@ O corpo da requisição deve seguir o formato abaixo:
     }
 
 <h4>Resposta da API:</h4>
-A resposta segue o formato abaixo com status ` 201 `:
+A resposta segue o formato abaixo com status <code>201</code>:
 
     {
     	"roomId": 1,
@@ -299,6 +331,10 @@ A resposta segue o formato abaixo com status ` 201 `:
     	}
     }
 
+</details>
+
+<details>
+<summary>DELETE /room</summary>
 <h2>DELETE /room</h2>
 
 <strong>Endereço de requisição - [ DELETE `/room/:roomId` ]</strong>
@@ -313,12 +349,16 @@ O corpo da requisição é vazio, com o ID do quarto vindo do próprio endereço
 
 <h4>Resposta da API:</h4>
 
-<strong>A API responde apenas com um status ` 403 `</strong>
+<strong>A API responde apenas com um status <code>403</code></strong>
+
+</details>
 
 <h1>Booking</h1>
 
 <strong>A funcionalidade de reserva (booking) trata de pedidos de hospedagem. Os usuários podem visualizar informações sobre reservas existentes, bem como criar novas reservas. As informações das reservas incluem detalhes como datas de check-in e check-out, quantidade de hóspedes e quarto reservado. Possui as seguintes requisições: GET, POST.</strong>
 
+<details>
+<summary>GET /booking</summary>
 <h2>GET /booking</h2>
 
 <strong>Endereço de requisição - [ GET `/booking` ]</strong>
@@ -332,7 +372,7 @@ O corpo da requisição é vazio, com o ID do quarto vindo do próprio endereço
 Não requer informação no corpo da requisição.
 
 <h4>Resposta da API:</h4>
-A resposta segue o formato abaixo com status ` 200 `:
+A resposta segue o formato abaixo com status <code>200</code>:
 
 	{
     	"bookingId": 1,
@@ -355,6 +395,10 @@ A resposta segue o formato abaixo com status ` 200 `:
 		}
 	}
 
+</details>
+
+<details>
+<summary>POST /booking</summary>
 <h2>POST /booking</h2>
 
 <strong>Endereço de requisição - [ POST `/booking` ]</strong>
@@ -415,12 +459,16 @@ Resposta da API:
 
 </details>
 
+</details>
+
 <h1>GeoLocation</h1>
 
 <strong>A funcionalidade de geolocalização permite que os usuários obtenham informações relacionadas a localizações geográficas. A API pode verificar o status de uma API externa de geolocalização e também retornar hotéis próximos com base em um endereço fornecido. Possui as seguintes requisições: GET(status), GET.</strong>
 
 <strong>Obs:. As rotas pertencentes a GeoLocation fazem uso de uma API externa para coletar os dados de endereço, portanto podendo conter retornos que não vão de acordo com os padrões previamente utilizados nesta API.</strong>
 
+<details>
+<summary>GET /geo/status</summary>
 <h2>GET /geo/status</h2>
 <strong>Endereço de requisição - [ GET <code>/geo/status</code> ]</strong>
 
@@ -431,7 +479,7 @@ Resposta da API:
 Não requer informação no corpo da requisição.
 
 <h4>Resposta da API:</h4>
-Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato abaixo, com status ` 200 `:
+Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato abaixo, com status <code>200</code>:
 
     {
     	"status": 200,
@@ -441,6 +489,10 @@ Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato 
     	"database_version": "3.6.0-0"
     }
 
+</details>
+
+<details>
+<summary>GET /geo/address</summary>
 <h2>GET /geo/address</h2>
 
 <strong>Endereço de requisição - [ GET `/geo/address` ]</strong>
@@ -458,7 +510,7 @@ O corpo da requisição deve seguir o formato abaixo:
     }
 
 <h4>Resposta da API:</h4>
-Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato abaixo, com status ` 200 `:
+Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato abaixo, com status <code>200</code>:
 
       [
           {
@@ -480,10 +532,14 @@ Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato 
         /* ... */
       }
 
+</details>
+
 <h1>User</h1>
 
 <strong>A funcionalidade de usuário trata do gerenciamento de contas de usuário. Os usuários podem obter informações sobre usuários registrados, bem como criar novos usuários. A autenticação é necessária para realizar ações de usuário. Possui as seguintes requisições: GET, POST.</strong>
 
+<details>
+<summary>GET /user</summary>
 <h2>GET /user</h2>
 
 <strong>Endereço de requisição - [ GET `/user` ]</strong>
@@ -497,7 +553,7 @@ Caso a API externa esteja em pleno funcionamento, a resposta seguirá o formato 
 Não requer informação no corpo da requisição.
 
 <h4>Resposta da API:</h4>
-A resposta segue o formato abaixo com status ` 200 `:
+A resposta segue o formato abaixo com status <code>200</code>:
 
     [
         {
@@ -509,6 +565,10 @@ A resposta segue o formato abaixo com status ` 200 `:
       /*...*/
     ]
 
+</details>
+
+<details>
+<summary>POST /user</summary>
 <h2>POST /user</h2>
 
 <strong>Endereço de requisição - [ POST `/user` ]</strong>
@@ -548,6 +608,8 @@ O corpo da requisição deve seguir o formato abaixo:
     {
     	"message": "User email already exists"
     }
+
+</details>
 
 </details>
 
