@@ -18,6 +18,16 @@
 
 </details>
 
+<h2>Aprendizados com este projeto</h2>
+<ul>
+<li>C#</li>
+<li>ASP.NET</li>
+<li>Entity Framework</li>
+<li>Docker</li>
+<li>JWT (Json Web Token)</li>
+<li>Azure Data Studio</li>
+</ul>
+
 ------------
 
 <h2>Tabela de Conteúdo</h2>
@@ -626,5 +636,3 @@ O corpo da requisição deve seguir o formato abaixo:
 </details>
 
 </details>
-
-<h1>Fim</h1>
