@@ -22,6 +22,7 @@
 <ul>
 <li>C#</li>
 <li>ASP.NET</li>
+<li>Microsoft SQL Server</li>
 <li>Entity Framework</li>
 <li>Docker</li>
 <li>JWT (Json Web Token)</li>
